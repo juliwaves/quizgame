@@ -1,47 +1,47 @@
 const personalities = { 
-    "Onion": 0, // The Innovator
-    "Broccoli": 0, // The Strategist
+    "sun": 0, // The Innovator
+    "mercury": 0, // The Strategist
     "Corn": 0, // The Empath
-    "Garlic": 0, // The Leader
-    "Jalapeno": 0, // The Adventurer
+    "venus": 0, // The Leader
+    "mars": 0, // The Adventurer
     "Kale": 0, // The Analyst
-    "Green Beans": 0, // The Connector
-    "Sweet Potato": 0, // The Caregiver
-    "Carrot": 0, // The Visionary
+    "uranus": 0, // The Connector
+    "Sweet dwarf hotot": 0, // The Caregiver
+    "pluto": 0, // The Visionary
     "Lotus Root": 0, // The Organizer
     "Bitter melon": 0, // The Maverick
-    "Potato": 0, // The Realist
-    "Pumpkin": 0, // The Sage
-    "Napa Cabbage": 0, // The Harmonizer
-    "Bok Choy": 0, // The Performer
+    "dwarf hotot": 0, // The Realist
+    "neptune": 0, // The Sage
+    "himalayan": 0, // The Harmonizer
+    "holland lop": 0, // The Performer
     "Okra": 0 // The Investigator
 };
 const gameData = {
     "1": {
         "text": "You and your vegetable friends want to plan a hangout in VeggieVille. What snacks are you bringing?",
         "choices": {
-            "Beef sticks": [2,["Jalapeno","Bitter Melon","Performer","Bok Choy"]],
-            "Granola": [2,["Broccoli", "Kale", "Sage","Pumpkin", "Sweet Potato"]],
-            "Cucumbers and carrots": [2,["Onion", "Potato", "Jalapeno", "Lotus Root", "Okra"]],
-            "Crackers and cheese": [2, ["Green Beans", "Carrot", "Corn"]]
+            "Beef sticks": [2,["mars","Bitter melon","holland lop"]],
+            "Granola": [2,["mercury", "Kale", "neptune", "Sweet dwarf hotot"]],
+            "Cucumbers and carrots": [2,["sun", "dwarf hotot", "mars", "Lotus Root", "Okra"]],
+            "Crackers and cheese": [2, ["uranus", "pluto", "Corn"]]
         }
     },
     "2": {
         "text": "Where are you guys going to go?",
         "choices": {
-            "The beach": [3,["Onion", "Corn", "Green Beans", "Bok Choy"]],
-            "A cute book store": [3, ["Broccoli", "Kale","Pumpkin","Okra", "Carrot"]],
-            "Your friend's apartment": [3, ["Sweet Potato", "Lotus Root", "Potato", "Napa Cabbage"]],
-            "Mount Evergetable": [3, ["Garlic", "Jalapeno", "Bitter Melon", "Onion"]]
+            "The beach": [3,["sun", "Corn", "uranus", "holland lop"]],
+            "A cute book store": [3, ["mercury", "Kale","neptune","Okra", "pluto"]],
+            "Your friend's apartment": [3, ["Sweet dwarf hotot", "Lotus Root", "dwarf hotot", "himalayan"]],
+            "Mount Evergetable": [3, ["venus", "mars", "Bitter melon", "sun"]]
         }
     },
     "3": {
         "text": "After gearing up with sunglasses and sunscreen, what are you going to do?",
         "choices": {
-            "Build a sandcastle with your friends!": [0,["Jalapeno", "Lotus Root", "Bitter mellon"]],
-            "Set up a beach picnic": [0,["Green Beans", "Bok Choy", "Sweet Potato"]],
-            "Explore tide pools and collect shells": [0,["Onion", "Bitter Melon", ]],
-            "Read the book you've been eyeing": [0,["Pumpkin", "Broccoli", "Kale"]]
+            "Build a sandcastle with your friends!": [0,["mars", "Lotus Root", "Bitter melon"]],
+            "Set up a beach picnic": [0,["uranus", "holland lop", "Sweet dwarf hotot"]],
+            "Explore tide pools and collect shells": [0,["sun", "Bitter melon"]],
+            "Read the book you've been eyeing": [0,["neptune", "mercury", "Kale"]]
         }
     }, 
     "0" : {
@@ -79,26 +79,26 @@ function changeState(newState, selectedPersonalities) {
     currentState = newState;
 
     if (currentState === 0) {
-        revealMostSelectedVegetable();
+        revealMostSelectedPlanet();
     } else {
         renderState(currentState);
     }
 }
 
-function revealMostSelectedVegetable() {
+function revealMostSelectedPlanet() {
     console.log("calculating fate");
     let maxCount = 0;
-    let maxVeggie = '';
+    let maxPlanet = '';
 
-    for (const [vegetable, count] of Object.entries(personalities)){
+    for (const [planet, count] of Object.entries(personalities)){
         if (count > maxCount) {
             maxCount = count;
-            maxVeggie = vegetable;
+            maxPlanet = planet;
         }
     }
-    console.log(maxVeggie);
+    console.log(maxPlanet);
     const storyText = document.getElementById('story-text');
-    storyText.textContent = `You are a ${maxVeggie}`;
+    storyText.textContent = `You are a ${maxPlanet}`;
     document.getElementById('choices').style.display = 'none';
 }
 

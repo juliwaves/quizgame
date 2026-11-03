@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What Vegetable Are You?</title>
+    <title>What type of bunny are you?</title>
     <style>
         @font-face {
-            font-family: 'PixelFont';
-            src: url('Pixelify_Sans/pixel_font.ttf') format('truetype');
+            font-family: 'Passage';
+            src: url('Passage 7.ttf') format('truetype');
         }
 
         body, html {
@@ -16,8 +16,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'PixelFont', sans-serif;
+            font-family: 'Passage', sans-serif;
             background: #f0f0f0;
+            overflow: auto; 
         }
 
         .container {
@@ -33,6 +34,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            overflow: auto; 
         }
 
         .title {
@@ -56,6 +58,11 @@
 
         .game-container {
             display: none;
+            overflow: auto; 
+        }
+
+        #game-container {
+            overflow: auto; 
         }
 
         .choice-button {
@@ -74,7 +81,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="title">What vegetable are you?</div>
+        <div class="title">what planet are you?</div>
         <a href="#" class="start-button" onclick="startGame()">Start</a>
         <div class="game-container" id="game-container">
             <div id="story-text"></div>
@@ -82,6 +89,4 @@
         </div>
     </div>
 
-    <script src="js/mainGame.js"></script> <!-- Ensure the path to your main game JavaScript file is correct -->
-</body> 
-</html>
+    <script src="js/mainGame.js"></script> 

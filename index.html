@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What Vegetable Are You?</title>
-    <link rel="icon" href="smaller_images/tomato.png" type="image/png">
+    <title>what planet are you?</title>
+    <link rel="icon" href="smaller_images/favicon-32x32.png" type="image/png">
     <style>
         @font-face {
-            font-family: 'PixelFont';
-            src: url('Pixelify_Sans/pixel_font.ttf') format('truetype');
+            font-family: 'Passage';
+            src: url('Passage 7.ttf') format('truetype');
         }
 
         body, html {
@@ -17,19 +17,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'PixelFont', sans-serif;
-            background: #faf5e2;
+            font-family: 'Passage', sans-serif;
+            background: #ede2ff;
         }
 
         .container {
             width: 100vw; /* full viewport width */
-            height: calc(100vw * (16 / 9)); /* maintain 9:16 aspect ratio */
-            max-height: 150vh; /* full viewport height */
+            min-height: 100vh; /* full viewport height */
+            max-height: 100vh; /* full viewport height */
             max-width: calc(100vh * (9 / 16));
             padding: 20px;
-            border-radius: 10px;
-            background: #a6e6b5;
-            /* background: #e5f2d2; */
+            background: #000000;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             text-align: center;
             box-sizing: border-box;
@@ -40,47 +38,79 @@
         }
 
         .title {
-            font-size: 21px;
-            margin-bottom: 3vh;
+            font-size: 40px;
+            margin-bottom: 1.5vh;
+            color: white;
         }
 
         .start-button {
-            font-size: 21px;
-            padding: 1vh 2vw;
-            /* border: 2px solid #fcf0c0; */
-            background-color: #f8eab6;
+            font-size: 26px;
+            padding: 2vh 2vw;
+            background-color: #d8c2ff;
             cursor: pointer;
             text-decoration: none;
             margin-bottom: 3vh;
+            color: rgb(25, 0, 255);
+            border-radius: 8px; 
+            border: none;
+            font-family: 'Passage';
         }
 
         .start-button:hover {
-            background-color: #ddd;
+            background-color: #ede2ff;
+        }
+
+        .end-button {
+            font-size: 26px;
+            padding: 2vh 2vw;
+            background-color: #d8c2ff;
+            cursor: pointer;
+            text-decoration: none;
+            color: rgb(25, 0, 255);
+            border-radius: 8px; 
+            border: none;
+            font-family: 'Passage';
+        }
+
+        .end-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .end-button:hover {
+            background-color: #ede2ff;
         }
 
         .game-container {
             display: none;
-            margin-top: 10%;
+            margin-top: 1rem;
             overflow: auto;
+            scrollbar-width: none;
         }
  
         .choices {
-        
-        display: flex;
-        flex-direction: column; /* Arrange buttons in a column */
-        align-items: center; /* Center the buttons horizontally */
-        gap: 10px; /* Space between the buttons */
-        margin-top: 2rem; /* Space above the choices container */
+            display: flex;
+            flex-direction: column; /* Arrange buttons in a column */
+            align-items: center; /* Center the buttons horizontally */
+            gap: 10px; /* Space between the buttons */
+            margin-top: 1rem; /* Space above the choices container */
         }
 
         .choice-button {
-            font-family: 'PixelFont', sans-serif;
-            font-size: 18px; /* Adjust font size to be smaller */
+            font-family: 'Passage', sans-serif;
+            font-size: 26px; /* Adjust font size to be smaller */
             padding: 1vh 1vw; /* Adjust padding based on viewport height and width */
             border: 0.5px solid #f2d79e; /* Solid border */
             background-color: #f6e9bd; /* White background */
             cursor: pointer; /* Pointer cursor on hover */
             transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+            border-radius: 8px; 
+            min-width: 70%;
+            max-width: 70%;
         }
 
         @media (hover: hover) {
@@ -92,14 +122,18 @@
             background-color: #fff; /* Slightly darker background on hover */
         }
         .story-text {
-            font-size: 20px;
-            margin-bottom: 1rem; /* Space above the choices container */
+            font-size: 34px;
+            max-width: 70%;
+            margin: auto;
+            
         /* padding-bottom: 5rem; */
+            color: white;
         }
 
         .image-container {
             max-width: 70%; /* Set max width of image container */
             margin: 0 auto; /* Center the image horizontally */
+            margin-top: 1rem; /* Space above the choices container */
         }
 
         .image-container img {
@@ -107,6 +141,18 @@
             height: auto; /* Maintain aspect ratio */
             display: block; /* Remove any extra space */
             max-width: 100%; /* Ensure image does not exceed its container */
+            border-radius: 2px; 
+        }
+
+        #homescreen{
+            border-radius: 2px;
+            margin-bottom: 15px;
+        }
+
+        #id-image{
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 2px;
         }
 
         .responsive-image {
@@ -117,9 +163,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="title">What vegetable are you?</div> 
-        <img id="homescreen" style="padding-bottom: 15px" src="smaller_images/homepage.png" alt="Story Image"/>
-        <a href="#" class="start-button" onclick="startGame()">Start</a>
+        <div class="title">what planet are you?</div> 
+        <img id="homescreen" src="smaller_images/homepage.png" alt="Story Image"/>
+        <a href="#" class="start-button" onclick="startGame()">START!</a>
         
         <div class="game-container" id="game-container">
             <div class ="story-text" id="story-text"></div>
