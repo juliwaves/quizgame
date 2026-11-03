@@ -342,7 +342,7 @@ function revealMostSelectedPlanet() {
     storyImage.style.display = "none";
     choicesContainer.style.display = "none";
     text.textContent = `your home planet is: ${maxPlanet}!`;
-    planetImage.onerror = () => text.appendChild(document.createTextNode(` (${maxPlanet} image unavailable)`));
+    planetImage.onerror = () => text.appendChild(document.createTextNode(`(${maxPlanet} image is lost in space. sorry!)`));
     planetImage.onload = () => {
         imageContainer.remove();
         gameContainer.appendChild(planetImage);
