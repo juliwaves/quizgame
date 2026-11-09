@@ -341,14 +341,19 @@ function revealMostSelectedPlanet() {
     endButtons.appendChild(shareButton);
     endButtons.appendChild(startOverButton);
 
+    const description = document.createElement("p");
+    description.className = "end-description";
+    description.innerHTML = 'made for the 2026 <a href="https://magicalingaming.org" target="_blank">magical</a> medium zine, by juliwaves';
+
     storyImage.style.display = "none";
     choicesContainer.style.display = "none";
-    text.textContent = `your home planet is: ${maxPlanet}!`;
+    text.textContent = `your planet is: ${maxPlanet}!`;
     planetImage.onerror = () => text.appendChild(document.createTextNode(`(${maxPlanet} image is lost in space. sorry!)`));
     planetImage.onload = () => {
         imageContainer.remove();
         gameContainer.appendChild(planetImage);
         gameContainer.appendChild(endButtons);
+        gameContainer.appendChild(description);
     };
 }
 
