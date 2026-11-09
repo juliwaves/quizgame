@@ -124,8 +124,8 @@ const gameData = {
         choices: {
             "navigating the stars and keeping us on course!": [17, { jupiter: 1, saturn: 1 }],
             "let’s sing a song, everyone! one, two…": [18, { sun: 1, mercury: 1 }],
-            "whipping out that board game and playing with my pals": [19, { venus: 2, saturn: 1 }, "requiresBoardGame"],
-            "cooking up a meal with my freeze-dried astronaut food": [20, { venus: 2, saturn: 1 }, "requiresBag"],
+            "whipping out that board game and playing with my pals": [19, { jupiter: 1, pluto: 1 }, "requiresBoardGame"],
+            "cooking up a meal with my freeze-dried astronaut food": [20, { mercury: 1, uranus: 1, saturn: 1 }, "requiresBag"],
             "watching the stars go by. it’s beautiful out here…": [21, { venus: 1, mars: 1, pluto: 1, neptune: 2 }],
             "taking a nap. i’m exhausted": [22, { uranus: 1 }]
         }
@@ -151,8 +151,8 @@ const gameData = {
     19: {
         text: "what kind of board game is this?",
         choices: {
-            "a murder mystery whodunit. we each play a character, trust no one": [23, { mercury: 1, venus: 1, mars: 1 }],
-            "a co-op battle against a massive alien invasion. if we can’t save earth in real life… we’ll do it in this game": [23, { sun: 1, neptune: 1 }],
+            "a murder mystery whodunit. we each play a character, trust no one": [23, { mercury: 1, venus: 1, neptune: 1 }],
+            "a co-op battle against a massive alien invasion. if we can’t save earth in real life… we’ll do it in this game": [23, { sun: 1, mars: 1 }],
             "it’s actually a trading card game. my collection is huge": [23, { pluto: 1, uranus: 1 }],
             "a strategy game where each player manages and trades resources to get the most points": [23, { jupiter: 1, saturn: 1 }]
         }
@@ -160,10 +160,10 @@ const gameData = {
     20: {
         text: "is the meal you made... good?",
         choices: {
-            "obviously. i can cook with anything": [23, { mercury: 1, venus: 1, pluto: 1}],
-            "it's decent. we're in space, i'm not a wizard": [23, { sun: 1, neptune: 1}],
-            "not really, but i tried my best and there's enough for everyone": [23, { jupiter: 1, uranus: 1 }],
-            "it's terrible. but hey it's nutritious": [23, { mars: 1, saturn: 1 }]
+            "obviously. i can cook with anything": [23, { pluto: 1, jupiter: 1}],
+            "it's decent. we're in space, i'm not a wizard": [23, { venus: 1, neptune: 1}],
+            "not really, but i tried my best and there's enough for everyone": [23, { sun: 1, uranus: 1 }],
+            "it's terrible. but hey it's nutritious": [23, { mars: 1, saturn: 1, mercury: 1 }]
         }
     },
     21: {
