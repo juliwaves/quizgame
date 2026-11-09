@@ -231,6 +231,7 @@ function availableChoice(choice) {
 function renderState(state) {
     const storyText = document.getElementById("story-text");
     const storyImage = document.getElementById("story-image");
+    const imageContainer = document.querySelector(".image-container");
     const choicesContainer = document.getElementById("choices");
     const stateData = gameData[state];
 
@@ -243,6 +244,7 @@ function renderState(state) {
     }
             
     storyImage.src = stateData.image || image;
+    imageContainer.style.display = "none";
     choicesContainer.innerHTML = "";
 
     for (const [choiceText, choice] of Object.entries(stateData.choices)) {
