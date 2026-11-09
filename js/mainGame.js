@@ -322,7 +322,7 @@ function revealMostSelectedPlanet() {
     shareButton.textContent = "share with friends!";
     shareButton.className = "end-button";
     shareButton.onclick = () => {
-        navigator.clipboard.writeText(`if i were a planet, i'd be ${maxPlanet}! You can create yours at https://sophie006liu.github.io/vegetal/`)
+        navigator.clipboard.writeText(`if i were a planet, i'd be ${maxPlanet}! find yours at real.juliwaves.com/quizgame`)
             .then(() => alert("planet type + quiz link copied to clipboard! (to share your image, save it to your device!)"))
             .catch(() => alert("failed to copy link. please try again."));
     };
